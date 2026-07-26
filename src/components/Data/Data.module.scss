@@ -1,0 +1,426 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+$inner-card: #282828;
+
+.data {
+  padding-top: fluid(2.5rem, 5.875rem);
+  padding-left: fluid(0.6875rem, 0rem, 20rem, 56.25rem);
+  padding-right: fluid(0.6875rem, 0rem, 20rem, 56.25rem);
+
+  &__card {
+    position: relative;
+    overflow: hidden;
+    background: $casual-black;
+    border-radius: fluid(1.25rem, 1.75rem);
+    padding: fluid(1.75rem, 2.313rem) fluid(1.25rem, 6.875rem) fluid(2.5rem, 4rem);
+
+    @media (max-width: 56.25rem) {
+      padding: 2.25rem 2.03rem 2.5rem;
+    }
+  }
+
+  &__title {
+    font-family: "Gilroy_0", sans-serif;
+    font-size: fluid(1.75rem, 2.5rem);
+    font-weight: 700;
+    color: $white;
+    text-align: center;
+
+    @media (max-width: 56.25rem) {
+      font-size: 2rem;
+    }
+  }
+
+  &__subtitle {
+    margin-top: fluid(1rem, 1.625rem);
+    font-family: "Gilroy_0", sans-serif;
+    font-size: fluid(1.25rem, 2rem);
+    font-weight: 400;
+    color: $white;
+    text-align: center;
+
+    b {
+      font-weight: 400;
+      color: $cyan-blue;
+    }
+  }
+
+  &__heading {
+    font-family: "Gilroy_0", sans-serif;
+    font-size: fluid(1.5rem, 2rem);
+    font-weight: 700;
+    color: $white;
+
+    @media (max-width: 56.25rem) {
+      text-align: center;
+    }
+
+    &_big {
+      font-size: fluid(1.75rem, 2.5rem);
+    }
+  }
+
+  &__dates {
+    display: flex;
+    gap: fluid(0.75rem, 0.938rem);
+    margin-top: fluid(1.75rem, 3.438rem);
+
+    @media (max-width: 56.25rem) {
+      flex-direction: column;
+      gap: 2.5rem;
+      margin-top: 2.556rem;
+    }
+  }
+
+  &__dateCard {
+    flex: 1 1 0;
+    min-width: 0;
+    background: $inner-card;
+    border-radius: 1.125rem;
+    padding: fluid(0.875rem, 1rem) fluid(0.875rem, 1rem) fluid(1.5rem, 2rem);
+
+    @media (max-width: 56.25rem) {
+      padding: 1.25rem 0.5rem 1.544rem;
+    }
+  }
+
+  &__datePill {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.35em;
+    background: $white;
+    border-radius: 1.75rem;
+    padding: 0.25rem 1rem;
+    font-family: "Gilroy_0", sans-serif;
+    font-size: fluid(0.875rem, 1.25rem);
+    font-weight: 500;
+    color: $casual-black;
+    white-space: nowrap;
+
+    @media (max-width: 56.25rem) {
+      font-size: 1.25rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      padding: 0.375rem 1rem 0.1875rem;
+    }
+
+    b {
+      font-family: "Disruptors-Script_0", sans-serif;
+      font-weight: 400;
+      font-size: fluid(1.75rem, 2.875rem);
+      line-height: 0.7;
+      color: $electric-blue;
+
+      @media (max-width: 56.25rem) {
+        font-size: 4rem;
+        line-height: 0.7;
+      }
+    }
+  }
+
+  &__dateList {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(1rem, 1.688rem);
+    margin-top: fluid(1.25rem, 2.125rem);
+
+    @media (max-width: 56.25rem) {
+      gap: 0;
+      margin-top: 1.25rem;
+    }
+  }
+
+  &__dateItem {
+    font-family: "Gilroy_0", sans-serif;
+    font-size: fluid(1rem, 1.25rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: $white;
+    text-align: center;
+
+    @media (max-width: 56.25rem) {
+      padding-top: 1.125rem;
+      margin-top: 1.125rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+      &:first-child {
+        padding-top: 0;
+        margin-top: 0;
+        border-top: none;
+      }
+    }
+  }
+
+  &__howto {
+    margin-top: fluid(2rem, 2.625rem);
+
+    @media (max-width: 56.25rem) {
+      display: none;
+    }
+  }
+
+  &__howtoText {
+    margin-top: fluid(1.25rem, 2rem);
+    font-family: "Gilroy_0", sans-serif;
+    font-size: fluid(1.25rem, 2rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: $white;
+
+    @media (max-width: 56.25rem) {
+      margin-top: 2.4375rem;
+      text-align: center;
+    }
+
+    b {
+      font-weight: 400;
+      color: $cyan-blue;
+    }
+  }
+
+  &__docsHeading {
+    margin-top: fluid(2rem, 4.5rem);
+
+    @media (max-width: 56.25rem) {
+      margin-top: 2.494rem;
+    }
+  }
+
+  &__docs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: fluid(0.75rem, 1.625rem);
+    margin-top: fluid(1.5rem, 2.813rem);
+
+    @media (max-width: 56.25rem) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 30rem) {
+      grid-template-columns: 1fr;
+      gap: 1.625rem;
+      margin-top: 1.319rem;
+    }
+  }
+
+  &__docCard {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: fluid(9rem, 12.313rem);
+    padding: fluid(3.25rem, 4rem) fluid(0.5rem, 0.75rem) fluid(1rem, 1.25rem);
+    background: $inner-card;
+    border-radius: 1.125rem;
+
+    @media (max-width: 30rem) {
+      flex-direction: column;
+      min-height: 6.5rem;
+      padding: 0.5625rem 1rem 1.369rem;
+    }
+  }
+
+  &__docIconWrap {
+    position: absolute;
+    top: fluid(0.75rem, 1rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: fluid(1.625rem, 2.0625rem);
+    height: fluid(1.625rem, 2.0625rem);
+    overflow: hidden;
+    pointer-events: none;
+
+    @media (max-width: 30rem) {
+      display: block;
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      width: 1.75rem;
+      height: 1.75rem;
+      margin: 0 auto 1rem;
+    }
+  }
+
+  &__docIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  &__docText {
+    font-family: "Gilroy_0", sans-serif;
+    font-size: fluid(1.125rem, 1.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: $white;
+    text-align: center;
+
+    @media (max-width: 30rem) {
+      font-size: 1.25rem;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__methodsHeading {
+    margin-top: fluid(2rem, 6.875rem);
+
+    @media (max-width: 56.25rem) {
+      margin-top: 2.8rem;
+    }
+  }
+
+  &__methods {
+    display: flex;
+    gap: fluid(0.75rem, 1.625rem);
+    margin-top: fluid(1.5rem, 2.813rem);
+
+    @media (max-width: 56.25rem) {
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.319rem;
+    }
+  }
+
+  &__methodCard {
+    background: $inner-card;
+    border-radius: 1.125rem;
+    padding: fluid(0.875rem, 1.375rem) fluid(1rem, 1.688rem) fluid(1rem, 1.75rem);
+
+    &_online {
+      flex: 0 1 26.4375rem;
+    }
+
+    &_offline {
+      flex: 1 1 auto;
+    }
+
+    @media (max-width: 56.25rem) {
+      &_online {
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+  &__methodPill {
+    display: inline-block;
+    background: $electric-blue;
+    border-radius: 1.25rem;
+    padding: 0.25rem 1.5rem;
+    font-family: "Gilroy_0", sans-serif;
+    font-size: fluid(1.125rem, 1.5rem);
+    font-weight: 700;
+    color: $white;
+
+    @media (max-width: 56.25rem) {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.6rem 1.5rem;
+      font-size: 1.25rem;
+      text-align: center;
+    }
+  }
+
+  &__methodText {
+    margin-top: fluid(1rem, 1.375rem);
+    font-family: "Gilroy_0", sans-serif;
+    font-size: fluid(1.125rem, 1.5rem);
+    font-weight: 400;
+    color: $white;
+
+    @media (max-width: 56.25rem) {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+
+  &__achHeading {
+    margin-top: fluid(2rem, 4.75rem);
+  }
+
+  &__achList {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(0.75rem, 1.375rem);
+    margin-top: fluid(1.5rem, 4rem);
+
+    @media (max-width: 56.25rem) {
+      gap: 1.306rem;
+      margin-top: 1.2625rem;
+      margin-bottom: 13rem;
+    }
+  }
+
+  &__achItem {
+    font-family: "Gilroy_0", sans-serif;
+    font-size: fluid(1.125rem, 1.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: $white;
+
+    @media (max-width: 56.25rem) {
+      font-size: 1.25rem;
+      text-align: center;
+    }
+
+    b {
+      font-weight: 400;
+      color: $cyan-blue;
+    }
+  }
+
+  &__arrow1 {
+    position: absolute;
+    left: 63.4%;
+    top: 37.3%;
+    width: 36.6%;
+    height: auto;
+    pointer-events: none;
+
+    @media (max-width: 56.25rem) {
+      display: none;
+    }
+  }
+
+  &__arrow2 {
+    position: absolute;
+    left: 46.6%;
+    top: 62.3%;
+    width: 31.4%;
+    height: auto;
+    pointer-events: none;
+
+    @media (max-width: 56.25rem) {
+      display: none;
+    }
+  }
+
+  &__trophy {
+    position: absolute;
+    right: 0.8%;
+    bottom: 0;
+    width: 32.4%;
+    height: auto;
+    pointer-events: none;
+
+    @media (max-width: 56.25rem) {
+      left: 50%;
+      right: auto;
+      bottom: 0;
+      width: 82.8%;
+      transform: translateX(-50%);
+      opacity: 1;
+    }
+  }
+}

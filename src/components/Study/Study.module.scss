@@ -1,0 +1,111 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.study {
+  padding-top: fluid(2.5rem, 6.25rem);
+
+  @media (max-width: 56.25rem) {
+    padding-left: 0.6875rem;
+    padding-right: 0.6875rem;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    background: $casual-black;
+    border-radius: fluid(1.25rem, 1.75rem);
+  }
+
+  &__photo {
+    width: fluid(20rem, 34.25rem);
+    height: auto;
+    align-self: flex-start;
+    margin: fluid(1.5rem, 3.188rem) 0 fluid(1.5rem, 3.25rem) fluid(1.5rem, 4.313rem);
+    border-radius: 0 fluid(3rem, 6.063rem) 0 0;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: fluid(1.5rem, 2.813rem) fluid(1rem, 2rem) fluid(1.5rem, 2rem) fluid(1.5rem, 3.125rem);
+
+    @media (max-width: 56.25rem) {
+      padding-left: 1.844rem;
+      padding-right: 1.844rem;
+    }
+  }
+
+  &__title {
+    font-family: "Gilroy_0", sans-serif;
+    font-size: fluid(1.75rem, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: $white;
+
+    @media (max-width: 56.25rem) {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2.375rem;
+
+    @media (max-width: 56.25rem) {
+      gap: 1.475rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 1.375rem;
+
+    p {
+      font-family: "Gilroy_0", sans-serif;
+      font-size: fluid(1rem, 1.25rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: $white;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-top: 0.875rem;
+    background: $electric-blue;
+    border-radius: 50%;
+
+    img {
+      width: 0.813rem;
+      height: 0.813rem;
+    }
+  }
+
+  @media (max-width: 56.25rem) {
+    &__container {
+      flex-direction: column;
+      padding-bottom: 1.8rem;
+    }
+
+    &__content {
+      order: -1;
+    }
+
+    &__photo {
+      width: calc(100% - 4rem);
+      margin: 1.5rem auto 0;
+    }
+
+    &__item p br {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.contacts {
+  padding-top: fluid(1.25rem, 1.75rem);
+  padding-bottom: fluid(2.5rem, 6.25rem);
+
+  &__container {
+    @include min-max(320px, 73.5rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  &__title {
+    font-family: "Gilroy_0", sans-serif;
+    font-size: fluid(1.75rem, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: $black;
+
+    @media (max-width: 45rem) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: fluid(1rem, 3.5rem);
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.813rem;
+    color: $black;
+  }
+
+  &__itemLink {
+    display: flex;
+    align-items: center;
+    gap: 0.813rem;
+    color: inherit;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $electric-blue;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__text {
+    font-family: "Gilroy_0", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: inherit;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 45rem) {
+    &__container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.15rem;
+    }
+
+    &__list {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.8125rem;
+    }
+
+    &__text {
+      white-space: normal;
+    }
+  }
+}

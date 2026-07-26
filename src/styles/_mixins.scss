@@ -1,0 +1,38 @@
+@use "./variables" as *;
+@use "sass:math";
+
+
+@function fluid($min, $max, $min-vw: 25rem, $max-vw: 90rem) {
+  $slope: math.div($max - $min, $max-vw - $min-vw);
+  $intercept: $min - $slope * $min-vw;
+  @return clamp(#{$min}, calc(#{$intercept} + #{$slope * 100}vw), #{$max});
+}
+
+@mixin min-max($min-width, $max-width) {
+  min-width: min($min-width, 100%);
+  max-width: $max-width;
+  box-sizing: border-box;
+  margin: 0 auto;
+  align-items: center;
+}
+
+@mixin btn-base($bg, $color, $brd) {
+  background: $bg;
+  color: $color;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: $brd;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.03);
+    background-color: $electric-blue;
+    color: $white;
+  }
+}
+
+@mixin btn-size($font-size, $p-top, $p-right, $p-bottom, $p-left) {
+  font-size: $font-size;
+  padding: $p-top $p-right $p-bottom $p-left;
+}
